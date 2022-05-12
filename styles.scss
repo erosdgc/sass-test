@@ -5,9 +5,19 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.header{
+.site-header{
     background-color: gray;
     padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navbar{
+        flex-wrap: wrap;
+        ul{
+            list-style: none;
+            display: inline-flex;
+        }
+    }
 }
 h1{
     color: gold;
@@ -45,8 +55,56 @@ section{
     background-color: gray;
     padding: 30px;
     text-align: center;
-
-    .footer-rights{
+        .footer-navbar{
+            ul{
+                list-style: none;
+                display: inline-flex;
+            }
+        }
+        .footer-brands{
         color: white;
+            ul{
+                list-style: none;
+                display: inline-flex;
+                font-size: 22px;
+            }
+        }
+        .footer-rights{
+            color: white;
+        }
+
+}
+
+$mapa1:(
+    20px: red,
+    40px: orange,
+    60px: yellow,
+    80px: purple
+);
+
+@mixin sizes ($height, $width, $bcolor) {
+    height: $height;
+    width: $width;
+    background-color: $bcolor;
+}
+
+@each $sizes, $colores in $mapa1{
+    .maps-#{$colores} {
+        background-color: #333;
+        height: 200px;
+        width: 500px;
+        border: 12px solid $colores;
+        text-align: center;
+        font-size: $sizes;
+        line-height: 200px;
+        color: yellow;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px orange;
+        font-family: cursive;
+        border-radius: 10px;
     }
+}
+
+.maps{
+    display: flex;
 }

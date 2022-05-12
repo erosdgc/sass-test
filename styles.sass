@@ -1,0 +1,73 @@
+*
+    margin: 0
+    padding: 0
+
+body
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+
+.header
+    background-color: gray
+    padding: 30px
+
+h1
+    color: gold
+    & span
+        color: black
+
+a
+    color: white
+    text-decoration: none
+  
+i
+    color: white
+    text-decoration: none
+
+section
+    height: 380px
+    width: 100%
+    background-color: darkslategray
+    padding: 30px
+    text-align: center
+    
+    h1
+        text-align: center
+        text-transform: uppercase
+    h1:hover
+        color: white
+    
+    article
+        width: 30%
+        text-align: justify
+        background-color: white
+        color: darkslateblue
+        border: 2px solid darkslateblue
+        padding: 15px
+
+.footer
+    background-color: gray
+    padding: 30px
+    text-align: center
+
+    .footer-rights
+        color: white
+ 
+@mixin sizes $height, $width, $bcolor
+    height: $height
+    width: $width
+    background-color: $bcolor
+
+
+@each $sizes, $colores in $mapa1
+    .maps-#$colores
+        background-color: #333
+        height: 200px
+        width: 500px
+        border: 12px solid $colores
+        text-align: center
+        font-size: $sizes
+        line-height: 200px
+        color: yellow
+        text-transform: uppercase
+        text-shadow: 0 0 5px orange
+        font-family: cursive
+        border-radius: 10px
